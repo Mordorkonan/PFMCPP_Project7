@@ -1,4 +1,5 @@
 #include "Paladin.h"
+#include "Utility.h"
 
 Paladin::Paladin(const std::string& name_, int hp_, int armor_) :
     name(name_),

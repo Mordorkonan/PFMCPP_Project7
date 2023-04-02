@@ -5,7 +5,8 @@ DragonSlayer::DragonSlayer(const std::string& name_, int hp_, int armor_) :
     name(name_),
     Character(hp_, armor_, 4)
     { }
-//DragonSlayer::getName
+
+const std::string& DragonSlayer::getName() { return name; }
 
 void DragonSlayer::attack(Character& other)
 {
@@ -20,6 +21,8 @@ void DragonSlayer::attack(Character& other)
         //look in the Character class for how the other item types are reset after use.
         while( dragon->getHP() > 0 )
         {
+            useAttackItem(this, /*AttackItem*/); // <======= maintainance
+            boostAttackDamage(attackDamage * 9);
             dragon->takeDamage(attackDamage);
         }
     }
@@ -28,4 +31,7 @@ void DragonSlayer::attack(Character& other)
         
 }
 
-//DragonSlayer::getStats
+std::string DragonSlayer::getStats()
+{
+    return getCharacterStats(this);
+}

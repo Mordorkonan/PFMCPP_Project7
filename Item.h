@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include "Utility.h"
 
 struct Character;
 struct Item

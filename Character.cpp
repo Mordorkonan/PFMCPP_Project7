@@ -15,6 +15,16 @@ Character::Character(int hp, int armor_, int attackDamage_ ) :
     initialAttackDamage.reset( new int( attackDamage) );
 }
 
+void Character::recalculateStatsOnLevelUp(int& stat, int& initialStat)
+{
+    if (stat <= initialStat)
+    {
+        stat = initialStat * 1.1;    // 10% boost
+    }
+    
+    initialStat = stat;
+}
+
 void Character::attack( Character& other )
 {
     if( hitPoints <= 0 )

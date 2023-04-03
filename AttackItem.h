@@ -6,5 +6,5 @@
 struct AttackItem : Item
 {
     AttackItem() : Item("attack item", 1) { }
-    void use(DragonSlayer* dragonSlayer) override;
+    void use(Character* character) override;
 };

@@ -3,5 +3,5 @@
 
 void DefensiveItem::use(Character* character)
 {
-    useDefensiveItem(character, this);
+    useDefensiveItem(character, *this);
 }

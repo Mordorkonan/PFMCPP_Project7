@@ -1,7 +1,7 @@
 #include "AttackItem.h"
 #include "Utility.h"
 
-void AttackItem::use(DragonSlayer* dragonSlayer)
+void AttackItem::use(Character* character)
 {
-    useAttackItem(dragonSlayer, this);
+    useAttackItem(character, this);
 }

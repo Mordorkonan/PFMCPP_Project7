@@ -1,6 +1,5 @@
 #include "DragonSlayer.h"
 #include "Dragon.h"
-#include "AttackItem.h"
 #include "Utility.h"
 
 DragonSlayer::DragonSlayer(const std::string& name_, int hp_, int armor_) :

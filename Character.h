@@ -38,6 +38,8 @@ struct Character
                                    int& initialHP,
                                    int& initialArmor,
                                    int& initialDamage);
+
+    void recalculateStatOnLevelUp(int& currentStat, int& initialStat);
     
     const std::vector<std::unique_ptr<Item>>& getHelpfulItems() const { return helpfulItems; }
     const std::vector<std::unique_ptr<Item>>& getDefensiveItems() const { return defensiveItems; }
@@ -61,13 +63,7 @@ struct Character
     }
 
     void printStats();
-    // {
-    //     std::cout << getName() << "'s stats: " << std::endl;
-    //     std::cout << getStats(); //make your getStats() use a function from the Utility.h
-        
-    //     std::cout << std::endl;
-    //     std::cout << std::endl;
-    // }
+
 protected:
     std::vector<std::unique_ptr<Item>> defensiveItems;
     std::vector<std::unique_ptr<Item>> helpfulItems;

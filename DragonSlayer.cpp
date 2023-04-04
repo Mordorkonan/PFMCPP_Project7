@@ -3,13 +3,13 @@
 #include "Utility.h"
 
 DragonSlayer::DragonSlayer(const std::string& name_, int hp_, int armor_) :
-    Character(hp_, armor_, 4),
-    name(name_),
-    attackItem(std::unique_ptr<AttackItem>(new AttackItem()))
-    {
-        defensiveItems = makeDefensiveItems(2);
-        helpfulItems = makeHelpfulItems(1);
-    }
+Character(hp_, armor_, 4),
+name(name_),
+attackItem(std::unique_ptr<AttackItem>(new AttackItem()))
+{
+    defensiveItems = makeDefensiveItems(2);
+    helpfulItems = makeHelpfulItems(1);
+}
 
 DragonSlayer::~DragonSlayer() { }
 
@@ -23,9 +23,11 @@ void DragonSlayer::attack(Character& other)
         // assert(false);
         if (dragon->getHP() > 0)
         {
-            auto* attackItemPtr = attackItem.get();
-            attackItemPtr->use(this);
-            attackItem.reset();
+            if (auto* attackItemPtr = attackItem.get())    // false if nullptr
+            {                
+                attackItemPtr->use(this);
+                attackItem.reset();
+            }
         }
         //DragonSlayers get a 10x boost when attacking dragons, from their attack item.
         //so they should USE their attack item before attacking the dragon... 

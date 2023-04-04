@@ -100,6 +100,7 @@ int Character::takeDamage(int damage)
 #include <cassert>
 void Character::attackInternal(Character& other)
 {
+    
     if( other.hitPoints <= 0 )
     {
         /*
@@ -108,6 +109,10 @@ void Character::attackInternal(Character& other)
             b) your stats are boosted 10%
             c) the initial value of your stats is updated to reflect this boosted stat for the next time you defeat another character.
       */
+        if (attackDamage != *initialAttackDamage)
+        {
+            recalculateStatOnLevelUp(attackDamage, *initialAttackDamage);
+        }
         recalculateStatOnLevelUp(hitPoints, *initialHitPoints);
         recalculateStatOnLevelUp(armor, *initialArmorLevel);
         recalculateStatOnLevelUp(attackDamage, *initialAttackDamage);

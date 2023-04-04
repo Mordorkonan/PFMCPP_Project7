@@ -2,8 +2,8 @@
 #include "Utility.h"
 
 Paladin::Paladin(const std::string& name_, int hp_, int armor_) :
-    name(name_),
-    Character(hp_, armor_, 10)
+    Character(hp_, armor_, 10),
+    name(name_)
     {
         defensiveItems = makeDefensiveItems(5);
         helpfulItems = makeHelpfulItems(2);

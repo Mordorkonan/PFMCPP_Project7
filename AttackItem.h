@@ -6,6 +6,7 @@ struct DragonSlayer;
 
 struct AttackItem : Item
 {
-    AttackItem() : Item("attack item", 10) { }
+    AttackItem();
+    ~AttackItem() override;
     void use(Character* character) override;
 };

@@ -3,8 +3,8 @@
 #include "Utility.h"
 
 DragonSlayer::DragonSlayer(const std::string& name_, int hp_, int armor_) :
-    name(name_),
     Character(hp_, armor_, 4),
+    name(name_),
     attackItem(std::unique_ptr<AttackItem>(new AttackItem()))
     {
         defensiveItems = makeDefensiveItems(2);

@@ -16,7 +16,7 @@ Character::Character(int hp, int armor_, int attackDamage_ ) :
 }
 
 void Character::recalculateStatOnLevelUp(int& currentStat, int& initialStat)
-{
+{    
     if (currentStat <= initialStat)
     {
         currentStat = initialStat * 1.1;    // 10% boost

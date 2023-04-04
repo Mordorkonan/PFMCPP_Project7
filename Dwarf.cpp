@@ -5,8 +5,8 @@ Dwarf::Dwarf(const std::string& name_, int hp_, int armor_) :
 Character(hp_, armor_, 4),
 name(name_)
 {
-    defensiveItems = makeDefensiveItems(4);
-    helpfulItems = makeHelpfulItems(4);
+    defensiveItems = makeDefensiveItems(5);
+    helpfulItems = makeHelpfulItems(2);
 }
 
 Dwarf::~Dwarf() { }

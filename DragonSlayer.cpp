@@ -7,8 +7,8 @@ Character(hp_, armor_, 4),
 name(name_),
 attackItem(std::unique_ptr<AttackItem>(new AttackItem()))
 {
-    defensiveItems = makeDefensiveItems(2);
-    helpfulItems = makeHelpfulItems(1);
+    defensiveItems = makeDefensiveItems(1);
+    helpfulItems = makeHelpfulItems(3);
 }
 
 DragonSlayer::~DragonSlayer() { }

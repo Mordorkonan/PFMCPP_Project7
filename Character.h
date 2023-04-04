@@ -32,13 +32,6 @@ struct Character
     int getAttackDamage() const { return attackDamage; }
     bool getIsDefending() const { return isDefending; }
 
-    void recalculateStatsOnLevelUp(int& currentHP,
-                                   int& currentArmor,
-                                   int& currentDamage,
-                                   int& initialHP,
-                                   int& initialArmor,
-                                   int& initialDamage);
-
     void recalculateStatOnLevelUp(int& currentStat, int& initialStat);
     
     const std::vector<std::unique_ptr<Item>>& getHelpfulItems() const { return helpfulItems; }

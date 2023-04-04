@@ -15,26 +15,6 @@ Character::Character(int hp, int armor_, int attackDamage_ ) :
     initialAttackDamage.reset( new int( attackDamage) );
 }
 
-void Character::recalculateStatsOnLevelUp(int& currentHP,
-                                          int& currentArmor,
-                                          int& currentDamage,
-                                          int& initialHP,
-                                          int& initialArmor,
-                                          int& initialDamage)
-{
-    int currentStats[3] { currentHP, currentArmor, currentDamage };
-    int initialStats[3] { initialHP, initialArmor, initialDamage };
-
-    for (int i = 0; i < 3; ++i)
-    {
-        if (currentStats[i] < initialStats[i])
-        {
-            currentStats[i] = initialStats[i] * 1.1;
-        }
-        initialStats[i] = currentStats[i];
-    }
-}
-
 void Character::recalculateStatOnLevelUp(int& currentStat, int& initialStat)
 {
     if (currentStat <= initialStat)

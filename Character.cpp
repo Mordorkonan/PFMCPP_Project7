@@ -35,7 +35,7 @@ void Character::recalculateStatsOnLevelUp(int& currentHP,
     }
 }
 
-void Character::recalculateStatOnLevelUp(int &currentStat, int &initialStat)
+void Character::recalculateStatOnLevelUp(int& currentStat, int& initialStat)
 {
     if (currentStat <= initialStat)
     {

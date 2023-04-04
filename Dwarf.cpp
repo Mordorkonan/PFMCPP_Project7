@@ -9,6 +9,8 @@ Dwarf::Dwarf(const std::string& name_, int hp, int armor) :
         helpfulItems = makeHelpfulItems(4);
     }
 
+Dwarf::~Dwarf() { }
+
 const std::string& Dwarf::getName() { return name; }
 
 std::string Dwarf::getStats()

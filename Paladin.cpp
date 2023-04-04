@@ -9,6 +9,8 @@ Paladin::Paladin(const std::string& name_, int hp_, int armor_) :
         helpfulItems = makeHelpfulItems(2);
     }
 
+Paladin::~Paladin() { }
+
 const std::string& Paladin::getName() { return name; }
 
 std::string Paladin::getStats()

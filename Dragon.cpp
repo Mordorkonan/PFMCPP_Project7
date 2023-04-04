@@ -7,6 +7,8 @@ Dragon::Dragon(const std::string& name_, int hp_, int armor_) :
     Character(hp_, armor_, 80)
     { }
 
+Dragon::~Dragon() { }
+
 void Dragon::attack(Character &other)
 {
     std::cout << name << " is attacking " << other.getName() << "!!!" << std::endl;

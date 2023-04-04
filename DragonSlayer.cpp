@@ -11,6 +11,8 @@ DragonSlayer::DragonSlayer(const std::string& name_, int hp_, int armor_) :
         helpfulItems = makeHelpfulItems(1);
     }
 
+DragonSlayer::~DragonSlayer() { }
+
 const std::string& DragonSlayer::getName() { return name; }
 
 void DragonSlayer::attack(Character& other)

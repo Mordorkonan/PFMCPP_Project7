@@ -19,9 +19,10 @@ void Character::recalculateStatOnLevelUp(int& currentStat, int& initialStat)
 {    
     if (currentStat <= initialStat)
     {
-        currentStat = initialStat * 1.1;    // 10% boost
+        currentStat = initialStat;    // 10% boost
     }
-    
+
+    currentStat *= 1.1;
     initialStat = currentStat;
 }
 
@@ -109,10 +110,6 @@ void Character::attackInternal(Character& other)
             b) your stats are boosted 10%
             c) the initial value of your stats is updated to reflect this boosted stat for the next time you defeat another character.
       */
-        if (attackDamage != *initialAttackDamage)
-        {
-            recalculateStatOnLevelUp(attackDamage, *initialAttackDamage);
-        }
         recalculateStatOnLevelUp(hitPoints, *initialHitPoints);
         recalculateStatOnLevelUp(armor, *initialArmorLevel);
         recalculateStatOnLevelUp(attackDamage, *initialAttackDamage);

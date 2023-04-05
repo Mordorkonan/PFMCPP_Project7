@@ -1,16 +1,34 @@
 #include "DragonSlayer.h"
 #include "Dragon.h"
+#include "Utility.h"
 
-//DragonSlayer::DragonSlayer
+DragonSlayer::DragonSlayer(const std::string& name_, int hp_, int armor_) :
+Character(hp_, armor_, 4),
+name(name_),
+attackItem(std::unique_ptr<AttackItem>(new AttackItem()))
+{
+    defensiveItems = makeDefensiveItems(1);
+    helpfulItems = makeHelpfulItems(3);
+}
 
-//DragonSlayer::getName
+DragonSlayer::~DragonSlayer() { }
+
+const std::string& DragonSlayer::getName() { return name; }
 
 void DragonSlayer::attack(Character& other)
 {
     std::cout << name << " is attacking " << other.getName() << " !!" << std::endl;
     if( auto* dragon = dynamic_cast<Dragon*>(&other) )
     {
-        assert(false);
+        // assert(false);
+        if (dragon->getHP() > 0)
+        {
+            if (auto* attackItemPtr = attackItem.get())    // false if nullptr
+            {                
+                attackItemPtr->use(this);
+                attackItem.reset();
+            }
+        }
         //DragonSlayers get a 10x boost when attacking dragons, from their attack item.
         //so they should USE their attack item before attacking the dragon... 
         //note: they should only use the item if the dragon's hitpoints are > 0...
@@ -26,4 +44,7 @@ void DragonSlayer::attack(Character& other)
         
 }
 
-//DragonSlayer::getStats
+std::string DragonSlayer::getStats()
+{
+    return getCharacterStats(this);
+}
